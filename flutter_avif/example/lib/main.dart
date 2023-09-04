@@ -19,60 +19,61 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.repeat_outlined),
-              tooltip: 'Encode Demo',
-              onPressed: () async {
-                final bytes = await rootBundle.load("assets/vettel.gif");
-                final avifBytes = await encodeAvif(bytes.buffer.asUint8List());
-                setState(() {
-                  encoderOutput = AvifImage.memory(
-                    avifBytes,
-                    height: 200,
-                    fit: BoxFit.contain,
-                  );
-                });
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.repeat_outlined),
-              tooltip: 'Encode Demo 2',
-              onPressed: () async {
-                final bytes = await rootBundle.load("assets/keyboard.png");
-                final avifBytes = await encodeAvif(bytes.buffer.asUint8List());
-                setState(() {
-                  encoderOutput2 = AvifImage.memory(
-                    avifBytes,
-                    height: 200,
-                    fit: BoxFit.contain,
-                  );
-                });
-              },
-            ),
-          ],
-        ),
-        body: ListView(
-          children: [
-            AvifImage.asset(
-              "assets/vettel.avif",
-              height: 200,
-              fit: BoxFit.contain,
-            ),
-            AvifImage.network(
-              "https://ezgif.com/images/format-demo/butterfly.avif",
-              height: 200,
-              fit: BoxFit.contain,
-            ),
-            encoderOutput,
-            encoderOutput2,
-          ],
-        ),
-      ),
-    );
+    return SizedBox.shrink();
+    // return MaterialApp(
+    //   home: Scaffold(
+    //     appBar: AppBar(
+    //       title: const Text('Plugin example app'),
+    //       actions: [
+    //         IconButton(
+    //           icon: const Icon(Icons.repeat_outlined),
+    //           tooltip: 'Encode Demo',
+    //           onPressed: () async {
+    //             final bytes = await rootBundle.load("assets/vettel.gif");
+    //             final avifBytes = await encodeAvif(bytes.buffer.asUint8List());
+    //             setState(() {
+    //               encoderOutput = AvifImage.memory(
+    //                 avifBytes,
+    //                 height: 200,
+    //                 fit: BoxFit.contain,
+    //               );
+    //             });
+    //           },
+    //         ),
+    //         IconButton(
+    //           icon: const Icon(Icons.repeat_outlined),
+    //           tooltip: 'Encode Demo 2',
+    //           onPressed: () async {
+    //             final bytes = await rootBundle.load("assets/keyboard.png");
+    //             final avifBytes = await encodeAvif(bytes.buffer.asUint8List());
+    //             setState(() {
+    //               encoderOutput2 = AvifImage.memory(
+    //                 avifBytes,
+    //                 height: 200,
+    //                 fit: BoxFit.contain,
+    //               );
+    //             });
+    //           },
+    //         ),
+    //       ],
+    //     ),
+    //     body: ListView(
+    //       children: [
+    //         AvifImage.asset(
+    //           "assets/vettel.avif",
+    //           height: 200,
+    //           fit: BoxFit.contain,
+    //         ),
+    //         AvifImage.network(
+    //           "https://ezgif.com/images/format-demo/butterfly.avif",
+    //           height: 200,
+    //           fit: BoxFit.contain,
+    //         ),
+    //         encoderOutput,
+    //         encoderOutput2,
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
 }
