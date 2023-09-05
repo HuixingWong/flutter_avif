@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_avif/flutter_avif.dart';
 import "package:flutter_avif_android/flutter_avif_android.dart";
+import "package:flutter_avif_ios/flutter_avif_ios.dart";
 
 void main() {
-  FlutterAvifAndroid.registerWith();
+  // FlutterAvifAndroid.registerWith();
+  FlutterAvifIos.registerWith();
   runApp(const MyApp());
 }
 

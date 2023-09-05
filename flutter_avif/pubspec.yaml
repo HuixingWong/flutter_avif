@@ -13,7 +13,8 @@ dependencies:
     path: ../flutter_avif_platform_interface
   flutter_avif_android:
     path: ../flutter_avif_android
-#  flutter_avif_ios: ^1.4.0
+  flutter_avif_ios:
+    path: ../flutter_avif_ios
 #  flutter_avif_macos: ^1.4.0
 #  flutter_avif_linux: ^1.4.0
 #  flutter_avif_windows: ^1.4.0
@@ -29,8 +30,8 @@ flutter:
     platforms:
       android:
         default_package: flutter_avif_android
-#      ios:
-#        default_package: flutter_avif_ios
+      ios:
+        default_package: flutter_avif_ios
 #      macos:
 #        default_package: flutter_avif_macos
 #      linux:
