@@ -469,7 +469,7 @@ class FlutterAvifWire implements FlutterRustBridgeWireBase {
   late final _new_list_encode_framePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<wire_list_encode_frame> Function(
-              ffi.Int32)>>('new_list_encode_frame');
+              ffi.Int32)>>('new_list_encode_frame_0');
   late final _new_list_encode_frame = _new_list_encode_framePtr
       .asFunction<ffi.Pointer<wire_list_encode_frame> Function(int)>();
 
@@ -484,7 +484,7 @@ class FlutterAvifWire implements FlutterRustBridgeWireBase {
   late final _new_uint_8_listPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<wire_uint_8_list> Function(
-              ffi.Int32)>>('new_uint_8_list');
+              ffi.Int32)>>('new_uint_8_list_0');
   late final _new_uint_8_list = _new_uint_8_listPtr
       .asFunction<ffi.Pointer<wire_uint_8_list> Function(int)>();
 
