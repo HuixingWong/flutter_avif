@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_avif/flutter_avif.dart';
@@ -5,8 +7,12 @@ import "package:flutter_avif_android/flutter_avif_android.dart";
 import "package:flutter_avif_ios/flutter_avif_ios.dart";
 
 void main() {
-  // FlutterAvifAndroid.registerWith();
-  FlutterAvifIos.registerWith();
+  if (Platform.isAndroid) {
+    FlutterAvifAndroid.registerWith();
+  }
+  if (Platform.isIOS) {
+    FlutterAvifIos.registerWith();
+  }
   runApp(const MyApp());
 }
 
@@ -62,11 +68,11 @@ class _MyAppState extends State<MyApp> {
         ),
         body: ListView(
           children: [
-            // AvifImage.asset(
-            //   "assets/vettel.avif",
-            //   height: 200,
-            //   fit: BoxFit.contain,
-            // ),
+            AvifImage.asset(
+              "assets/test_multi_frame.avif",
+              height: 200,
+              fit: BoxFit.contain,
+            ),
             AvifImage.network(
               "https://ezgif.com/images/format-demo/butterfly.avif",
               height: 200,
