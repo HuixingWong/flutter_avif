@@ -68,8 +68,23 @@ class _MyAppState extends State<MyApp> {
         ),
         body: ListView(
           children: [
-            AvifImage.asset(
+            Image.asset(
+              'assets/5.avif',
+              width: 100,
+              height: 100,
+            ),
+            Image.asset(
               "assets/test_multi_frame.avif",
+              height: 200,
+              fit: BoxFit.contain,
+            ),
+            Image.asset(
+              "assets/vettel.avif",
+              height: 200,
+              fit: BoxFit.contain,
+            ),
+            Image.asset(
+              "assets/vettel.gif",
               height: 200,
               fit: BoxFit.contain,
             ),
